@@ -1,0 +1,35 @@
+eureka:
+  client:
+    instance:
+      preferIpAddress: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+info:
+  app:
+    description: this app category
+    name: microservice category
+    version: 1.0.0
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+server:
+  port: 8002
+spring:
+  application:
+    name: category-service
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      data-source-properties:
+        characterEncoding: UTF-8
+        useUnicode: true
+    password: 
+    url: jdbc:mysql://localhost:3306/micro_category?createDatabaseIfNotExist=true
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: none
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.xml
